@@ -37,16 +37,31 @@ Invalid concise example with explanation
 - Path: `.cursor/rules/`
 - Extension: `.mdc`
 
-### Naming Convention
-PREFIX-name.mdc where PREFIX is:
-- 0XX: Core standards
-- 1XX: Tool configs
-- 3XX: Testing standards
-- 1XXX: Language rules
-- 2XXX: Framework rules
-- 8XX: Workflows
-- 9XX: Templates
-- _name.mdc: Private rules
+Naming Convention
+Files follow pattern PREFIX-name.mdc where:
+PREFIX Categories
+
+0XX: Core standards
+1XX: Tool configurations
+3XX: Testing standards
+8XX: Workflows
+9XX: Templates
+1XXX: Language-specific rules
+2XXX: Framework-specific rules
+_name.mdc: Private rules (not tracked in VCS)
+
+Numbering Rules
+
+Each category uses sequential numbering without gaps
+New rule: identify category → find last used number → assign next number
+Example: If 100-102 exist, next tool config is 103
+
+Notes
+
+Never reuse numbers
+Use most specific category for cross-category rules
+Update .gitignore to exclude "_" prefixed files
+
 
 ### Glob Pattern Examples
 Common glob patterns for different rule types:
